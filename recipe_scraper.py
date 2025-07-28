@@ -25,7 +25,7 @@ ws.append(["Name", "Ingredients", "Instructions"])
 for r in recipes:
     name = r.find("h2").text
     ingredients = [li.text for li in r.find("ul").find_all("li")]
-    instructions = r.find("p").text
+    instructions = r.find("p").text.replace("Instructions:","")
 
     # Join ingredients into a single string
     ingredients_text = ", ".join(ingredients)
